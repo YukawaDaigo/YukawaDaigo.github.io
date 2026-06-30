@@ -182,7 +182,7 @@ details#axesPanel[open] summary::before{content:"▾ ";}
   <header>
     <div>
       <h1>PEFC&nbsp;Analyzer</h1>
-      
+      <p class="subtitle" id="t_sub">Overpotential Analysis · IR-Free · Tafel · in your browser</p>
     </div>
     <div class="top-actions">
       <button id="langBtn" class="mini">English</button>
@@ -288,7 +288,7 @@ details#axesPanel[open] summary::before{content:"▾ ";}
 /* ---------- i18n ---------- */
 const LANG = {
   EN:{
-    sub:"Overpotential analysis · IR-free · Tafel · in your browser",
+    sub:"Cell voltage loss analysis",
     files:"File Manager",drop:'Drag & drop CSV here, or <b>click to import</b>',
     params:"Parameters (active file)",area:"Electrode Area [cm²]",theo:"Theoretical Voltage E₀ [V]",
     range:"Tafel fit range (log₁₀ j)",fit:"2 · Run Tafel Fit (active)",fitAll:"⚡ Fit ALL files",
@@ -310,6 +310,7 @@ const LANG = {
     ok_fit:"Tafel fit done",imp:"file(s) imported",need_fit:"Run the Tafel fit first.",
     ok_fitall:"Fitted {n}/{m} files",fail_some:"{n} could not be fitted (check each file's range)."},
   JA:{
+    sub:"過電圧解析",
     files:"ファイル管理",drop:'CSVをドラッグ&ドロップ、または<b>クリックで読込</b>',
     params:"パラメータ（選択中ファイル）",area:"電極面積 [cm²]",theo:"理論電圧 E₀ [V]",
     range:"Tafel近似範囲（log₁₀ j）",fit:"2 · 近似実行（選択中）",fitAll:"⚡ 全ファイルを一括近似",
