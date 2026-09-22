@@ -1,0 +1,83 @@
+/* =========================================================
+   variables.css
+   サイト全体の「設定値」だけを置くファイルです。
+   色・フォント・文字サイズ・余白・アニメーション時間を変えたいときは、
+   ここの値を書き換えるだけで全ページに反映されます。
+   ========================================================= */
+
+:root {
+  /* ----- 色 ----------------------------------------------
+     背景と文字の基本色。補助色は白の不透明度を下げて表現します。 */
+  --color-background: #000000;       /* 背景 */
+  --color-text: #ffffff;             /* 本文・見出し */
+  --color-text-muted: rgba(255, 255, 255, 0.6);   /* 日付・学会名・キャプション */
+  --color-text-faint: rgba(255, 255, 255, 0.4);   /* 章番号・コピーライトなど */
+  --color-line: rgba(255, 255, 255, 0.18);        /* 区切り線 */
+  --color-line-strong: rgba(255, 255, 255, 0.5);  /* キーワードの枠線 */
+  --color-backdrop: rgba(0, 0, 0, 0.92);          /* 図版拡大時の背景 */
+
+  /* ----- フォント ----------------------------------------
+     英数字は Jost、日本語は Zen Kaku Gothic New が自動で使われます。 */
+  --font-family-base: "Jost", "Zen Kaku Gothic New", sans-serif;
+  --font-weight-light: 300;   /* 名前・英語見出し */
+  --font-weight-regular: 400; /* 本文 */
+  --font-weight-medium: 500;  /* 小見出し */
+
+  /* ----- 文字サイズ -------------------------------------- */
+  --font-size-name: clamp(3rem, 11vw, 10rem);      /* トップの「Daigo Yukawa」 */
+  --font-size-name-ja: clamp(1.125rem, 2vw, 1.5rem); /* 湯川大悟 */
+  --font-size-section-title: clamp(1.5rem, 2.4vw, 2rem); /* Keywords などの章見出し */
+  --font-size-heading: clamp(1.25rem, 1.8vw, 1.5rem);    /* 研究内容の見出し */
+  --font-size-subheading: 1.0625rem;  /* 研究内容の小見出し */
+  --font-size-body: 1rem;             /* 本文 */
+  --font-size-small: 0.875rem;        /* 学会名・キャプション・メニュー */
+  --font-size-tiny: 0.75rem;          /* 章番号・コピーライト */
+  --font-size-menu-overlay: 2rem;     /* スマホの全画面メニューの項目 */
+
+  /* ----- 行間・字間・行の長さ ---------------------------- */
+  --line-height-body: 1.9;     /* 日本語本文の行間 */
+  --line-height-body-en: 1.7;  /* 英語表示のときの本文の行間 */
+  --line-height-tight: 1.1;    /* 名前など大きな文字 */
+  --line-height-heading: 1.5;  /* 見出し・英語タイトル */
+  --letter-spacing-body: 0.02em;
+  --letter-spacing-name: 0.01em;
+  --measure: 40em;             /* 1 行の最大長（全角 40 字程度） */
+
+  /* ----- 余白 --------------------------------------------- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 2rem;
+  --space-l: 4rem;
+  --space-xl: 8rem;
+  --page-gutter: clamp(1rem, 4vw, 3.5rem);  /* 画面左右の余白（スマホで 16px） */
+  --section-spacing: clamp(5rem, 10vw, 9rem); /* セクション同士の間隔 */
+  --section-heading-width: 14rem;           /* デスクトップ時の見出し列の幅 */
+  --content-max-width: 90rem;               /* ページ全体の最大幅 */
+
+  /* ----- 線・部品のサイズ -------------------------------- */
+  --line-width: 1px;              /* 区切り線・下線・枠線の太さ */
+  --progress-height: 1px;         /* 上端の読み進み線の太さ */
+  --header-height: 4.5rem;        /* ヘッダーの高さ */
+  --focus-offset: 4px;            /* キーボード操作時の枠の離れ具合 */
+  --keyword-padding: 0.5rem 1rem; /* キーワードの内側余白 */
+  --biography-period-width: 5em;  /* 経歴の年の列の幅 */
+  --lightbox-image-max-height: 80vh;
+  --lightbox-image-max-width: 92vw;
+
+  /* ----- 重なり順 ----------------------------------------- */
+  --z-menu: 50;
+  --z-header: 60;
+  --z-progress: 70;
+
+  /* ----- アニメーション時間 ------------------------------ */
+  --duration-fast: 200ms;      /* キーワード反転など */
+  --duration-base: 400ms;      /* 下線・メニューのフェード */
+  --duration-slow: 900ms;      /* 名前の 1 文字の現れ方 */
+  --name-char-delay: 70ms;     /* 名前の文字が次に現れるまでの間隔 */
+  --name-start-delay: 200ms;   /* 読み込みから名前が現れ始めるまで */
+  --menu-item-delay: 60ms;     /* メニュー項目がずれて現れる間隔 */
+  --menu-item-shift: 0.75rem;  /* メニュー項目が動く距離 */
+  --name-char-shift: 0.15em;   /* 名前の文字が動く距離 */
+  --easing: cubic-bezier(0.22, 1, 0.36, 1); /* 動きの加減速 */
+}
