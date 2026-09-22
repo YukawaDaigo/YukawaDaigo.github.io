@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- lang="ja" が初期表示の言語。右上の JA / EN ボタンで main.js が切り替えます -->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daigo Yukawa | 湯川大悟</title>
+  <meta name="description" content="湯川大悟（Daigo Yukawa）— 固体高分子形燃料電池を研究する学生研究者の個人ページ。 / Personal website of Daigo Yukawa, a student researcher working on polymer electrolyte fuel cells.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- フォント（Google Fonts）：英数字 Jost / 日本語 Zen Kaku Gothic New -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+
+  <!-- スタイル（上から順に読み込む。色やサイズは variables.css で変更） -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+
+  <!--
+    【日本語と英語の書き方】
+    lang="ja" を付けた要素は日本語表示のときだけ、lang="en" を付けた要素は英語表示のときだけ見えます。
+    どちらの言語でも同じ内容（発表タイトルなど）は、lang を付けずに 1 つだけ書けば両方で表示されます。
+  -->
+
+  <!-- 画面上端の読み進み線（スクロール量に応じて伸びる） -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===== ヘッダー・メニュー ここから ===== -->
+  <header class="site-header">
+    <a class="site-logo nav-link" href="#top">Daigo Yukawa</a>
+
+    <div class="header-controls">
+      <!-- メニュー項目を増やすときは <li> を 1 つコピーし、href を各セクションの id に合わせる -->
+      <nav class="site-nav" id="site-nav" aria-label="Menu">
+        <ul class="site-nav-list">
+          <li><a class="nav-link" href="#keywords">Keywords</a></li>
+          <li><a class="nav-link" href="#biography">Biography</a></li>
+          <li><a class="nav-link" href="#papers">Papers</a></li>
+          <li><a class="nav-link" href="#presentations">Presentations</a></li>
+          <li><a class="nav-link" href="#research">Research</a></li>
+        </ul>
+      </nav>
+
+      <!-- 言語の切り替え（押された方のボタンが白く表示される） -->
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-button nav-link" type="button" data-lang="ja" aria-pressed="true">JA</button>
+        <span class="lang-divider" aria-hidden="true">/</span>
+        <button class="lang-button nav-link" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+
+      <!-- スマホ表示のときだけ出るボタン（文字は main.js が Menu / Close に切り替え） -->
+      <button class="menu-button nav-link" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+  <!-- ===== ヘッダー・メニュー ここまで ===== -->
+
+  <main class="site-main">
+
+    <!-- ===== トップ（名前） ここから ===== -->
+    <section class="hero" id="top" aria-label="Top">
+      <h1 class="hero-name">Daigo Yukawa</h1>
+      <p class="hero-name-ja">湯川大悟</p>
+      <p class="hero-title">Student Researcher</p>
+    </section>
+    <!-- ===== トップ（名前） ここまで ===== -->
+
+
+    <!-- ===== 研究キーワード ここから ===== -->
+    <section class="section" id="keywords" aria-labelledby="keywords-title">
+      <header class="section-header">
+        <p class="section-number">01</p>
+        <h2 class="section-title" id="keywords-title">Keywords</h2>
+      </header>
+      <div class="section-body">
+        <!-- キーワードを追加するときは <li> を 1 つコピーし、日本語と英語を書き換える -->
+        <ul class="keyword-list">
+          <li class="keyword-item"><span lang="ja">固体高分子形燃料電池</span><span lang="en">Polymer electrolyte fuel cells</span></li>
+          <li class="keyword-item"><span lang="ja">多層触媒層構造</span><span lang="en">Multilayer catalyst layer structure</span></li>
+          <li class="keyword-item"><span lang="ja">カーボンブラック</span><span lang="en">Carbon black</span></li>
+          <li class="keyword-item"><span lang="ja">緩和時間分布解析</span><span lang="en">Distribution of relaxation times analysis</span></li>
+          <li class="keyword-item"><span lang="ja">凝集</span><span lang="en">Agglomeration</span></li>
+          <li class="keyword-item"><span lang="ja">スプレーコート法</span><span lang="en">Spray coating</span></li>
+        </ul>
+      </div>
+    </section>
+    <!-- ===== 研究キーワード ここまで ===== -->
+
+
+    <!-- ===== 経歴 ここから ===== -->
+    <section class="section" id="biography" aria-labelledby="biography-title">
+      <header class="section-header">
+        <p class="section-number">02</p>
+        <h2 class="section-title" id="biography-title">Biography</h2>
+      </header>
+      <div class="section-body">
+        <!-- 経歴を追加するときは <li class="biography-item"> ～ </li> を 1 つコピーする -->
+        <ul class="biography-list">
+          <li class="biography-item">
+            <span class="biography-period">-2027</span>
+            <span class="biography-detail" lang="ja">大阪公立大学工業高等専門学校, 総合工学システム学科</span>
+            <span class="biography-detail" lang="en">Osaka Metropolitan University College of Technology, Department of Integrated Engineering Systems</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- ===== 経歴 ここまで ===== -->
+
+
+    <!-- ===== 原著論文 ここから ===== -->
+    <section class="section" id="papers" aria-labelledby="papers-title">
+      <header class="section-header">
+        <p class="section-number">03</p>
+        <h2 class="section-title" id="papers-title">Papers</h2>
+      </header>
+      <div class="section-body">
+        <h3 class="paper-category"><span lang="ja">原著論文</span><span lang="en">Full Papers</span></h3>
+        <!-- 論文を追加するときは <li class="paper-item"> を 1 つコピーする
+             （論文名は英語だけで書けば両方の言語で表示される。
+              「未出版」の行は、最初の論文を追加したら削除する） -->
+        <ul class="paper-list">
+          <li class="paper-item"><span lang="ja">未出版</span><span lang="en">Unpublished</span></li>
+        </ul>
+      </div>
+    </section>
+    <!-- ===== 原著論文 ここまで ===== -->
+
+
+    <!-- ===== 学会発表 ここから ===== -->
+    <section class="section" id="presentations" aria-labelledby="presentations-title">
+      <header class="section-header">
+        <p class="section-number">04</p>
+        <h2 class="section-title" id="presentations-title">Presentations</h2>
+      </header>
+      <div class="section-body">
+        <!-- 新しい学会発表を追加するときは <li class="presentation-item"> ～ </li> を 1 つコピーする
+             （新しいものを上に置く場合はリストの先頭に貼り付ける。英語だけなので両言語共通） -->
+        <ul class="presentation-list">
+          <li class="presentation-item">
+            <p class="presentation-title">Multilayer Catalyst Structures with Pt-Free Carbon Layers for Reduced Platinum Loading in Polymer Electrolyte Fuel Cells</p>
+            <p class="presentation-venue">The 36th International Symposium on Transport Phenomena</p>
+          </li>
+          <li class="presentation-item">
+            <p class="presentation-title">Effects of Carbon Ink Composition on the Cell Performance of Polymer Electrolyte Fuel Cells: Vulcan/Ketjenblack Blending Ratio and Water/Ethanol Ratio</p>
+            <p class="presentation-venue">11th STI-Gigaku 2026</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- ===== 学会発表 ここまで ===== -->
+
+
+    <!-- ===== 研究内容 ここから ===== -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <header class="section-header">
+        <p class="section-number">05</p>
+        <h2 class="section-title" id="research-title">Research</h2>
+      </header>
+
+      <!-- ----- 研究内容（日本語） ここから ----- -->
+      <div class="section-body" lang="ja">
+        <h3 class="research-heading">固体高分子形燃料電池</h3>
+
+        <!-- 図版：画像を差し替えるときは src と alt、figcaption の文章を書き換える -->
+        <figure class="research-figure">
+          <button class="figure-button" type="button">
+            <img class="figure-image" src="images/fig1-pefc.svg" alt="PEFCの断面図。アノードに水素、カソードに空気を供給し、ガス流路・GDL・触媒層（CL）・電解質膜（PEM）を通って水素イオンと電子が移動する様子と、両極の反応式を示す" width="900" height="560">
+            <span class="visually-hidden">（拡大表示）</span>
+          </button>
+          <figcaption class="figure-caption">図1　固体高分子形燃料電池（PEFC）の概要</figcaption>
+        </figure>
+
+        <p class="research-text">この研究は2026年度に行ったものであり、2つのテーマを進めた。</p>
+
+        <!-- テーマ1 -->
+        <h4 class="research-subheading">Ptフリーカーボン層を導入した多層触媒層構造</h4>
+        <p class="research-text">固体高分子形燃料電池（PEFC）は低環境負荷なエネルギー変換デバイスである。しかし白金触媒の使用によるコストが障壁となり未だ広範囲での普及には至っていない。触媒層内部での反応分布を分析し、反応分布が薄い部分の白金をカーボンに置き換えることでコストカットと性能維持を実現する。</p>
+
+        <figure class="research-figure">
+          <button class="figure-button" type="button">
+            <img class="figure-image" src="images/fig2-multilayer.svg" alt="（a）白金担持量が均一な従来の触媒層と、（b）反応の少ない領域をPtフリーカーボン層に置き換えた多層触媒層を、局所的な酸素還元反応速度の分布とともに比較した図" width="900" height="640">
+            <span class="visually-hidden">（拡大表示）</span>
+          </button>
+          <figcaption class="figure-caption">図2　多層触媒層のイメージモデル</figcaption>
+        </figure>
+
+        <!-- テーマ2 -->
+        <h4 class="research-subheading">カーボンインク組成がセル性能に及ぼす影響</h4>
+        <p class="research-text">カーボン層にはバルカンブラック及びケッチェンブラックを使用しており、凝集特性などが異なる。この研究ではカーボンインク組成の最適化を行った。</p>
+
+        <figure class="research-figure">
+          <button class="figure-button" type="button">
+            <img class="figure-image" src="images/fig3-carbon-black.svg" alt="（a）バルカンブラック（Vulcan XC-72R）と（b）ケッチェンブラック（Ketjenblack EC-300J）の比較。凝集体構造（コンパクト／高分岐）、一次粒子の断面（中実／中空）、比表面積（約250 m²/g／約800 m²/g）を示す" width="900" height="640">
+            <span class="visually-hidden">（拡大表示）</span>
+          </button>
+          <figcaption class="figure-caption">図3　バルカンブラックとケッチェンブラックの特性イメージ</figcaption>
+        </figure>
+      </div>
+      <!-- ----- 研究内容（日本語） ここまで ----- -->
+
+      <!-- ----- 研究内容（英語） ここから ----- -->
+      <div class="section-body" lang="en">
+        <h3 class="research-heading">Polymer Electrolyte Fuel Cells</h3>
+
+        <figure class="research-figure">
+          <button class="figure-button" type="button">
+            <img class="figure-image" src="images/fig1-pefc.svg" alt="Cross-section of a PEFC. Hydrogen is supplied to the anode and air to the cathode; protons and electrons travel through the gas channels, GDL, catalyst layers (CL) and membrane (PEM). The reactions at both electrodes are shown." width="900" height="560">
+            <span class="visually-hidden">(enlarge)</span>
+          </button>
+          <figcaption class="figure-caption">Fig. 1  Overview of a polymer electrolyte fuel cell (PEFC)</figcaption>
+        </figure>
+
+        <p class="research-text">This research was carried out in fiscal year 2026 and covered two themes.</p>
+
+        <!-- Theme 1 -->
+        <h4 class="research-subheading">Multilayer catalyst layer structures with Pt-free carbon layers</h4>
+        <p class="research-text">Polymer electrolyte fuel cells (PEFCs) are energy conversion devices with a low environmental impact. However, the cost of platinum catalysts remains a barrier, and PEFCs have yet to be widely adopted. By analyzing the reaction distribution inside the catalyst layer and replacing platinum with carbon in regions where little reaction occurs, this work aims to reduce cost while maintaining cell performance.</p>
+
+        <figure class="research-figure">
+          <button class="figure-button" type="button">
+            <img class="figure-image" src="images/fig2-multilayer.svg" alt="Comparison of (a) a conventional catalyst layer with uniform platinum loading and (b) a multilayer catalyst layer in which the low-reaction region is replaced by a Pt-free carbon layer, shown with the local oxygen reduction reaction rate." width="900" height="640">
+            <span class="visually-hidden">(enlarge)</span>
+          </button>
+          <figcaption class="figure-caption">Fig. 2  Schematic model of a multilayer catalyst layer</figcaption>
+        </figure>
+
+        <!-- Theme 2 -->
+        <h4 class="research-subheading">Effect of carbon ink composition on cell performance</h4>
+        <p class="research-text">The carbon layer uses Vulcan black and Ketjenblack, which differ in properties such as agglomeration behavior. In this study, the composition of the carbon ink was optimized.</p>
+
+        <figure class="research-figure">
+          <button class="figure-button" type="button">
+            <img class="figure-image" src="images/fig3-carbon-black.svg" alt="Comparison of (a) Vulcan XC-72R and (b) Ketjenblack EC-300J: aggregate structure (compact / highly branched), primary particle cross-section (solid / hollow shell) and specific surface area (about 250 m²/g / about 800 m²/g)." width="900" height="640">
+            <span class="visually-hidden">(enlarge)</span>
+          </button>
+          <figcaption class="figure-caption">Fig. 3  Characteristics of Vulcan black and Ketjenblack</figcaption>
+        </figure>
+      </div>
+      <!-- ----- 研究内容（英語） ここまで ----- -->
+    </section>
+    <!-- ===== 研究内容 ここまで ===== -->
+
+  </main>
+
+  <!-- ===== フッター ここから ===== -->
+  <footer class="site-footer">
+    <p>© Daigo Yukawa</p>
+  </footer>
+  <!-- ===== フッター ここまで ===== -->
+
+  <!-- 図版の拡大表示（中身は main.js がクリックされた図から自動で入れる） -->
+  <dialog class="lightbox" aria-label="Figure">
+    <img class="lightbox-image" alt="">
+    <p class="lightbox-caption"></p>
+    <button class="lightbox-close nav-link" type="button">Close</button>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
