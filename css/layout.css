@@ -1,0 +1,157 @@
+/* =========================================================
+   layout.css
+   ヘッダー、メニュー、トップ、各セクションの「配置」を決めるファイル。
+   ※ 768px は「スマホ／デスクトップ表示の切り替え幅」です。
+     CSS の仕様上メディアクエリには変数が使えないため、ここだけ数値で書いています。
+   ========================================================= */
+
+/* ----- ヘッダー（画面上部に固定） ---------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  height: var(--header-height);
+  padding: 0 var(--page-gutter);
+  background-color: var(--color-background);
+}
+
+/* 左上の小さな名前（トップへ戻るリンク） */
+.site-logo {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+}
+
+/* 右側のまとまり（メニュー・言語切り替え・Menu ボタン） */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+/* ----- メニュー（デスクトップ：横並びの小さなリンク） -- */
+.site-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-xs) var(--space-m);
+  font-size: var(--font-size-small);
+}
+
+/* 「Menu / Close」ボタンはデスクトップでは隠す */
+.menu-button {
+  display: none;
+  font-size: var(--font-size-small);
+}
+
+/* ----- メニュー（スマホ：全画面オーバーレイ） ---------- */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  /* 左上の名前・言語切り替え・Menu/Close ボタンをオーバーレイより手前に出す */
+  .site-logo,
+  .lang-switch,
+  .menu-button {
+    position: relative;
+    z-index: var(--z-header);
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-menu);
+    display: flex;
+    align-items: center;
+    padding: var(--header-height) var(--page-gutter);
+    background-color: var(--color-background);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .site-nav-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--space-s);
+    font-size: var(--font-size-menu-overlay);
+    font-weight: var(--font-weight-light);
+  }
+
+  /* メニューが開いている状態（main.js が body に付けるクラス） */
+  .is-menu-open .site-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .is-menu-open {
+    overflow: hidden;
+  }
+}
+
+/* ----- 読み進み具合の線（画面上端） -------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-progress);
+  width: 100%;
+  height: var(--progress-height);
+  background-color: var(--color-text);
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-progress, 0));
+}
+
+/* ----- ページ本体 --------------------------------------- */
+.site-main {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+/* ----- トップ（名前） ----------------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--header-height) 0 var(--space-l);
+}
+
+/* ----- 各セクション（見出し列 + 本文列の 2 カラム） ---- */
+.section {
+  display: grid;
+  grid-template-columns: var(--section-heading-width) minmax(0, 1fr);
+  gap: var(--space-m);
+  padding: var(--space-m) 0 var(--section-spacing);
+  border-top: var(--line-width) solid var(--color-line);
+  scroll-margin-top: var(--header-height);
+}
+
+.section-body {
+  max-width: var(--measure);
+}
+
+/* スマホでは見出しを本文の上に置く 1 カラム */
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-m);
+  }
+}
+
+/* ----- フッター ----------------------------------------- */
+.site-footer {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-m) var(--page-gutter) var(--space-l);
+  border-top: var(--line-width) solid var(--color-line);
+  color: var(--color-text-faint);
+  font-size: var(--font-size-tiny);
+}

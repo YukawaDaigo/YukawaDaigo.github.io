@@ -1,0 +1,215 @@
+/* =========================================================
+   components.css
+   キーワード、経歴・業績リスト、図版などの「部品」の見た目。
+   ========================================================= */
+
+/* ----- トップの名前 ------------------------------------- */
+.hero-name {
+  font-size: var(--font-size-name);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-name);
+}
+
+/* 名前を 1 文字ずつ動かすための入れ物（main.js が作ります） */
+.hero-name-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-name-char {
+  display: inline-block;
+}
+
+.hero-name-ja {
+  margin-top: var(--space-m);
+  font-size: var(--font-size-name-ja);
+  font-weight: var(--font-weight-regular);
+}
+
+.hero-title {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+/* ----- セクション見出し（Keywords など） --------------- */
+.section-number {
+  color: var(--color-text-faint);
+  font-size: var(--font-size-tiny);
+}
+
+.section-title {
+  font-size: var(--font-size-section-title);
+}
+
+/* ----- ナビのリンク（下線は motion.css で動かします） -- */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--line-width);
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* ----- 言語切り替え（JA / EN） ------------------------ */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-small);
+}
+
+.lang-button {
+  color: var(--color-text-muted);
+}
+
+/* 選ばれている言語は白で表示 */
+.lang-button[aria-pressed="true"] {
+  color: var(--color-text);
+}
+
+.lang-divider {
+  color: var(--color-text-faint);
+}
+
+/* ----- 研究キーワード ----------------------------------- */
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.keyword-item {
+  padding: var(--keyword-padding);
+  border: var(--line-width) solid var(--color-line-strong);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-heading);
+}
+
+/* ----- 経歴 --------------------------------------------- */
+.biography-item {
+  display: grid;
+  grid-template-columns: var(--biography-period-width) minmax(0, 1fr);
+  gap: var(--space-s);
+}
+
+.biography-period {
+  color: var(--color-text-muted);
+}
+
+/* ----- 原著論文 ----------------------------------------- */
+.paper-category {
+  margin-bottom: var(--space-s);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+}
+
+.paper-item + .paper-item {
+  margin-top: var(--space-m);
+}
+
+/* ----- 学会発表 ----------------------------------------- */
+.presentation-item {
+  padding: var(--space-m) 0;
+  border-bottom: var(--line-width) solid var(--color-line);
+}
+
+.presentation-item:first-child {
+  padding-top: 0;
+}
+
+.presentation-title {
+  line-height: var(--line-height-heading);
+}
+
+.presentation-venue {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+/* ----- 研究内容の文章 ----------------------------------- */
+.research-heading {
+  margin-bottom: var(--space-m);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-regular);
+}
+
+.research-subheading {
+  margin: var(--space-l) 0 var(--space-s);
+  padding-top: var(--space-m);
+  border-top: var(--line-width) solid var(--color-line);
+  font-size: var(--font-size-subheading);
+  font-weight: var(--font-weight-medium);
+}
+
+.research-text + .research-text {
+  margin-top: var(--space-s);
+}
+
+/* ----- 図版 --------------------------------------------- */
+.research-figure {
+  margin: var(--space-m) 0;
+}
+
+/* 図版をクリックできるボタン（拡大表示用） */
+.figure-button {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.figure-image {
+  width: 100%;
+}
+
+.figure-caption {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+/* ----- 図版の拡大表示（ライトボックス） ---------------- */
+.lightbox {
+  max-width: none;
+  max-height: none;
+  padding: var(--space-s);
+  border: 0;
+  background: none;
+  color: var(--color-text);
+}
+
+.lightbox::backdrop {
+  background-color: var(--color-backdrop);
+}
+
+.lightbox-image {
+  width: var(--lightbox-image-max-width);
+  max-height: var(--lightbox-image-max-height);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  text-align: center;
+}
+
+.lightbox-close {
+  display: block;
+  width: fit-content;
+  margin: var(--space-s) auto 0;
+  font-size: var(--font-size-small);
+}
