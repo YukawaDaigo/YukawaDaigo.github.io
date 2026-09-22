@@ -1,1 +1,109 @@
+/* =========================================================
+   base.css
+   ブラウザごとの差をなくすリセットと、要素の基本スタイル。
+   ========================================================= */
+
+/* ----- リセット ----------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* ----- ページ全体 --------------------------------------- */
+html {
+  background-color: var(--color-background);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ----- 日本語／英語の表示切り替え ---------------------
+   <html lang="ja"> のときは lang="en" の要素を隠し、
+   <html lang="en"> のときは lang="ja" の要素を隠します。 */
+html[lang="ja"] [lang="en"],
+html[lang="en"] [lang="ja"] {
+  display: none;
+}
+
+/* 英語表示のときは行間を少し詰める */
+html[lang="en"] body {
+  line-height: var(--line-height-body-en);
+}
+
+/* ----- 見出し ------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-heading);
+}
+
+/* ----- リンク ------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----- キーボード操作時のフォーカス表示 ---------------- */
+:focus-visible {
+  outline: var(--line-width) solid var(--color-text);
+  outline-offset: var(--focus-offset);
+}
+
+/* ----- 画面には出さず読み上げだけするテキスト ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
